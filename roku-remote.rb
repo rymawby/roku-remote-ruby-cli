@@ -46,8 +46,14 @@ def show_single_key
 end
 
 def do_key_press(key)
-  `curl -sd '' http://10.69.137.27:8060/keydown/#{key}`
-  `curl -sd '' http://10.69.137.27:8060/keyup/#{key}`
+  `curl -sd '' http://#{@roku_ip_address}:8060/keydown/#{key}`
+  `curl -sd '' http://#{@roku_ip_address}:8060/keyup/#{key}`
 end
 
-show_single_key while(true)
+if ARGV.length > 0
+  @roku_ip_address = ARGV[0]
+  show_single_key while(true)
+else
+  puts "Please enter the IP address of your Roku"
+end
+
