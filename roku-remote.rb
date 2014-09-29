@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby -w
+
 require 'io/console'
 
 # Reads keypresses from the user including 2 and 3 escape character sequences.
@@ -56,4 +58,3 @@ if ARGV.length > 0
 else
   puts "Please enter the IP address of your Roku"
 end
-
